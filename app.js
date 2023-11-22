@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/shorten', (req, res) => {
-  res.send('provide shorten URL')
+  res.render('short')
 })
 
 app.get('/shorten/:shortURL', (req, res) => {
