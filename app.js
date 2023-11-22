@@ -13,7 +13,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/shorten', (req, res) => {
-  res.render('short')
+  const inputURL = req.query.inputURL // get original URL from route
+  res.render('short', { inputURL })
 })
 
 app.get('/shorten/:shortURL', (req, res) => {
