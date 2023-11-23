@@ -1,7 +1,7 @@
 <form action="/shorten">
   <div class="mb-3 px-5 row justify-content-center">
     {{!-- input 後面加上 required 可以確保欄位必不為空 --}}
-    <input type="text" name="inputURL" class="form-control-lg" id="InputURL" placeholder="Input URL Here" required>
+    <input type="url" name="inputURL" class="form-control-lg" id="InputURL" placeholder="Input URL Here" required>
   </div>
   <div class="d-grid gap-2 col-6 mx-auto">
     <button type="submit" class="btn btn-outline-primary btn-lg">Shorten</button>
