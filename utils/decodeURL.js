@@ -19,7 +19,6 @@ module.exports = (shortURL) => {
   // if no pair, return 'undefined' by default
   for (const [key, value] of Object.entries(jsonData)) {
     if (value === shortURL) {
-      console.log(`Original website is: ${key}`)
       return key
     }
   }

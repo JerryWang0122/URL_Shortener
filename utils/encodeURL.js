@@ -10,7 +10,7 @@ const MIN = 0
 const DIGIT = 5
 
 module.exports = (originalURL) => {
-  // 當網址以"/"結尾時，移除最後字元
+  // 當網址以"/"結尾時，移除最後字元，確保相同網站產生相同短網址
   if (originalURL.endsWith("/")) originalURL = originalURL.slice(0, -1)
 
   // Generate by ChatGPT

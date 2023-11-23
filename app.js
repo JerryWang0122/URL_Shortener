@@ -18,7 +18,6 @@ app.get('/', (req, res) => {
 app.get('/shorten', (req, res) => {
   const inputURL = req.query.inputURL // get original URL from route
   const shortURL = encodeURL(inputURL)
-  console.log(`encode ${inputURL} to ${shortURL}`)
   res.render('short', { shortURL })
 })
 
