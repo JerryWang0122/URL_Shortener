@@ -6,6 +6,10 @@ const MIN = 0
 const DIGIT = 5
 
 module.exports = (originalURL) => {
+  return generateShortURL()
+}
+
+function generateShortURL() {
   // 儲存回傳的短網址
   let shortURL = ''
 
