@@ -4,6 +4,7 @@ const app = express()
 const port = 3000
 
 const encodeURL = require("./utils/encodeURL")
+const decodeURL = require("./utils/decodeURL")
 
 app.engine('.hbs', engine({extname: '.hbs'}))
 app.set('view engine', '.hbs')
@@ -22,8 +23,8 @@ app.get('/shorten', (req, res) => {
 })
 
 app.get('/shorten/:shortURL', (req, res) => {
-  const shortURL = req.params.shortURL
-  res.send(`decode shortURL: ${shortURL}, and go to original website`)
+  const originalURL = decodeURL(req.params.shortURL)
+  res.redirect(originalURL)
 })
 
 app.listen(port, () => {
