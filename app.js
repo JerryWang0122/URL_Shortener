@@ -23,8 +23,14 @@ app.get('/shorten', (req, res) => {
 })
 
 app.get('/shorten/:shortURL', (req, res) => {
-  const originalURL = decodeURL(req.params.shortURL)
-  res.redirect(originalURL)
+  const shortURL = req.params.shortURL
+  const originalURL = decodeURL(shortURL)
+  if (originalURL) {
+    res.redirect(originalURL)
+  } else {
+    res.render('error', {errURL: `http://localhost:${port}/shorten/${shortURL}`})
+  }
+  
 })
 
 app.listen(port, () => {
